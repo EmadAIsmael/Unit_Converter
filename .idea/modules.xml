@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/A simple calculator/Problems-A_simple_calculator.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/A simple calculator/Problems-A_simple_calculator.iml" group="Unit_Converter/Problems-A_simple_calculator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/A simple calculator/Problems-A_simple_calculator_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/A simple calculator/Problems-A_simple_calculator_main.iml" group="Unit_Converter/Problems-A_simple_calculator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/A simple calculator/Problems-A_simple_calculator_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/A simple calculator/Problems-A_simple_calculator_test.iml" group="Unit_Converter/Problems-A_simple_calculator" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/From string to a number/Problems-From_string_to_a_number.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/From string to a number/Problems-From_string_to_a_number.iml" group="Unit_Converter/Problems-From_string_to_a_number" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/From string to a number/Problems-From_string_to_a_number_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/From string to a number/Problems-From_string_to_a_number_main.iml" group="Unit_Converter/Problems-From_string_to_a_number" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/From string to a number/Problems-From_string_to_a_number_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/From string to a number/Problems-From_string_to_a_number_test.iml" group="Unit_Converter/Problems-From_string_to_a_number" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Unit_Converter.iml" filepath="$PROJECT_DIR$/.idea/modules/Unit_Converter.iml" group="Unit_Converter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Unit Converter/task/Unit_Converter-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Unit Converter/task/Unit_Converter-task.iml" group="Unit_Converter/Unit_Converter-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Unit Converter/task/Unit_Converter-task_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Unit Converter/task/Unit_Converter-task_main.iml" group="Unit_Converter/Unit_Converter-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Unit Converter/task/Unit_Converter-task_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Unit Converter/task/Unit_Converter-task_test.iml" group="Unit_Converter/Unit_Converter-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util.iml" group="Unit_Converter/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_main.iml" group="Unit_Converter/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_test.iml" group="Unit_Converter/util" />
+    </modules>
+  </component>
+</project>
