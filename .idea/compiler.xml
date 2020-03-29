@@ -6,6 +6,8 @@
       <module name="Problems-A_simple_calculator_test" target="1.8" />
       <module name="Problems-From_string_to_a_number_main" target="1.8" />
       <module name="Problems-From_string_to_a_number_test" target="1.8" />
+      <module name="Problems-I_like_Kotlin_main" target="1.8" />
+      <module name="Problems-I_like_Kotlin_test" target="1.8" />
       <module name="Unit_Converter-task_main" target="1.8" />
       <module name="Unit_Converter-task_test" target="1.8" />
       <module name="util_main" target="1.8" />
