@@ -23,6 +23,29 @@ enum class Units(val userInput: Array<String>, val factor: Double) {
 
 class Converter {
 
+    private val abbrev = mapOf(
+        "m" to arrayOf("meter", "meters"),
+        "km" to arrayOf("kilometer", "Kilometers"),
+        "cm" to arrayOf("centimeter", "centimeters"),
+        "mm" to arrayOf("millimeter", "millimeters"),
+        "mi" to arrayOf("mile", "miles"),
+        "yd" to arrayOf("yard", "yards"),
+        "ft" to arrayOf("foot", "feet"),
+        "in" to arrayOf("inch", "inches"),
+        "g" to arrayOf("gram", "grams"),
+        "kg" to arrayOf("kilogram", "kilograms"),
+        "mg" to arrayOf("milligram", "milligrams"),
+        "lb" to arrayOf("pound", "pounds"),
+        "oz" to arrayOf("ounce", "ounces"),
+        "c" to arrayOf("degree Celsius", "degrees Celsius"),
+        "dc" to arrayOf("degree Celsius", "degrees Celsius"),
+        "celsius" to arrayOf("degree Celsius", "degrees Celsius"),
+        "f" to arrayOf("degree Fahrenheit", "degrees Fahrenheit"),
+        "df" to arrayOf("degree Fahrenheit", "degrees Fahrenheit"),
+        "fahrenheit" to arrayOf("degree Fahrenheit", "degrees Fahrenheit"),
+        "k" to arrayOf("Kelvin", "Kelvins")
+    )
+
     private fun unitInfo(unit: String): Units {
         for (enum in Units.values()) {
             for (input in enum.userInput)
@@ -106,7 +129,7 @@ class Converter {
         val commonFrom = commonUnit(fromUnit)
         val commonTo = commonUnit(toUnit)
         return (fromUnit in Units.CELSIUS..Units.KELVIN && toUnit in Units.CELSIUS..Units.KELVIN) ||
-                (commonFrom == commonTo && (commonFrom != Units.NULL && commonTo != Units.NULL))
+                (commonFrom == commonTo && commonFrom != Units.NULL)
     }
 
     private fun pluralize(unit: String?): String? {
@@ -151,28 +174,6 @@ class Converter {
         toUnit: String
     ): String {
 
-        val abbrev = mutableMapOf(
-            "m" to arrayOf("meter", "meters"),
-            "km" to arrayOf("kilometer", "Kilometers"),
-            "cm" to arrayOf("centimeter", "centimeters"),
-            "mm" to arrayOf("millimeter", "millimeters"),
-            "mi" to arrayOf("mile", "miles"),
-            "yd" to arrayOf("yard", "yards"),
-            "ft" to arrayOf("foot", "feet"),
-            "in" to arrayOf("inch", "inches"),
-            "g" to arrayOf("gram", "grams"),
-            "kg" to arrayOf("kilogram", "kilograms"),
-            "mg" to arrayOf("milligram", "milligrams"),
-            "lb" to arrayOf("pound", "pounds"),
-            "oz" to arrayOf("ounce", "ounces"),
-            "c" to arrayOf("degree Celsius", "degrees Celsius"),
-            "dc" to arrayOf("degree Celsius", "degrees Celsius"),
-            "celsius" to arrayOf("degree Celsius", "degrees Celsius"),
-            "f" to arrayOf("degree Fahrenheit", "degrees Fahrenheit"),
-            "df" to arrayOf("degree Fahrenheit", "degrees Fahrenheit"),
-            "fahrenheit" to arrayOf("degree Fahrenheit", "degrees Fahrenheit"),
-            "k" to arrayOf("Kelvin", "Kelvins")
-        )
         val fromU: String
         val toU: String
         val fromKey = fromUnit.toLowerCase()

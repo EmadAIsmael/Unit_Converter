@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Task5Test" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-03-29T15:56:57" hostname="Dell-XPS-L702X" time="1.295">
+<testsuite name="Task5Test" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-03-29T20:24:30" hostname="Dell-XPS-L702X" time="1.876">
   <properties/>
-  <testcase name="start" classname="Task5Test" time="1.295">
+  <testcase name="start" classname="Task5Test" time="1.876">
     <failure message="java.lang.AssertionError: Wrong answer in test #7&#10;&#10;We detected that you are using static variables, but they are not fully supported in testing. It might happen that if you try to avoid using them you will pass this stage.&#10;&#10;Please find below the output of your program during this failed test.&#10;Note that the '&gt;' character indicates the beginning of the input line.&#10;&#10;---&#10;&#10;Enter what you want to convert (or exit): &gt;100.0 X to Pound&#10;Conversion from ??? to Pounds is impossible&#10;Enter what you want to convert (or exit): &gt;exit" type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #7
 
 We detected that you are using static variables, but they are not fully supported in testing. It might happen that if you try to avoid using them you will pass this stage.
