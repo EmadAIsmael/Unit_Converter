@@ -1,0 +1,65 @@
+[1;31m
+Start test 1[0m
+*Enter what you want to convert (or exit): >1 degree Celsius to Kelvins
+$1.0 degree Celsius is 274.15 Kelvins
+*Enter what you want to convert (or exit): >-272.15 dc to K
+%-272.15 degrees Celsius is 1.0 Kelvin
+*Enter what you want to convert (or exit): >1 kn to feet
+)Conversion from ??? to feet is impossible
+*Enter what you want to convert (or exit): >1 km to feet
+'1.0 kilometer is 3280.839895013123 feet
+*Enter what you want to convert (or exit): >3 pount to ounces
++Conversion from ??? to ounces is impossible
+*Enter what you want to convert (or exit): >3 pound to ounces
+&3.0 pounds is 47.99999999999999 ounces
+*Enter what you want to convert (or exit): >3 kelvins to grams
+.Conversion from Kelvins to grams is impossible
+*Enter what you want to convert (or exit): >3 grams to meters
+-Conversion from grams to meters is impossible
+*Enter what you want to convert (or exit): >exit
+[1;31m
+Start test 2[0m
+*Enter what you want to convert (or exit): 
+>1 F in K
+31.0 degree Fahrenheit is 255.92777777777778 Kelvins
+*Enter what you want to convert (or exit): 
+>1 K in F
+(1.0 Kelvin is -457.87 degrees Fahrenheit
+*Enter what you want to convert (or exit): 
+>1 C in K
+$1.0 degree Celsius is 274.15 Kelvins
+*Enter what you want to convert (or exit): 
+>1 K in C
+%1.0 Kelvin is -272.15 degrees Celsius
+*Enter what you want to convert (or exit): 
+>1 F in C
+;1.0 degree Fahrenheit is -17.22222222222222 degrees Celsius
+*Enter what you want to convert (or exit): 
+>1 C in F
+-1.0 degree Celsius is 33.8 degrees Fahrenheit
+*Enter what you want to convert (or exit): >exit
+[1;31m
+Start test 3[0m
+*Enter what you want to convert (or exit): >100 AAA convertTo BBB
+(Conversion from ??? to ??? is impossible
+*Enter what you want to convert (or exit): >exit
+[1;31m
+Start test 4[0m
+*Enter what you want to convert (or exit): >-100.0 X to Y
+(Conversion from ??? to ??? is impossible
+*Enter what you want to convert (or exit): >exit
+[1;31m
+Start test 5[0m
+*Enter what you want to convert (or exit): >-100.0 kelvin to Y
+,Conversion from Kelvins to ??? is impossible
+*Enter what you want to convert (or exit): >exit
+[1;31m
+Start test 6[0m
+*Enter what you want to convert (or exit): >-100.0 X to Kelvin
+,Conversion from ??? to Kelvins is impossible
+*Enter what you want to convert (or exit): >exit
+[1;31m
+Start test 7[0m
+*Enter what you want to convert (or exit): >100.0 X to Pound
++Conversion from ??? to Pounds is impossible
+*Enter what you want to convert (or exit): >exit
