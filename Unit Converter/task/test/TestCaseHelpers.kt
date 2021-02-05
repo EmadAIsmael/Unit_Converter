@@ -1,5 +1,5 @@
-import org.hyperskill.hstest.v6.testcase.CheckResult
-import org.hyperskill.hstest.v6.testcase.TestCase
+import org.hyperskill.hstest.testcase.CheckResult
+import org.hyperskill.hstest.testcase.TestCase
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 import java.util.*

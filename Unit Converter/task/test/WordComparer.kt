@@ -1,4 +1,4 @@
-import org.hyperskill.hstest.v6.testcase.CheckResult
+import org.hyperskill.hstest.testcase.CheckResult
 import java.util.*
 import kotlin.math.max
 import kotlin.math.min
@@ -77,8 +77,8 @@ class WordComparer(
 
     fun compare(): CheckResult {
         // I am author
-        val myTokens = tokenizeWordsRegex(myStr)
-        val hisTokens = tokenizeWordsRegex(hisStr)
+        val myTokens = tokenizeWordsRegex(myStr.toLowerCase())
+        val hisTokens = tokenizeWordsRegex(hisStr.toLowerCase())
 
         val badTokenIdx = myTokens.zip(hisTokens).indexOfFirst { (my, his) -> my != his }
 
@@ -120,6 +120,6 @@ class WordComparer(
             return CheckResult(false, "Your output is too long. " +
                     "It contains ${hisTokens.size - myTokens.size} extra words.")
         }
-        return CheckResult.TRUE
+        return CheckResult.correct()
     }
 }

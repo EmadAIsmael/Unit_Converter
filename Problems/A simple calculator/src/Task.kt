@@ -1,6 +1,6 @@
 import java.util.*
 
-fun main(args: Array<String>) {
+fun main() {
     val scanner = Scanner(System.`in`)
 
     val mathOp = List<String>(3) { scanner.next() }

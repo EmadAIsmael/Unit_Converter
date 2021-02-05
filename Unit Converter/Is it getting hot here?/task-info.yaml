@@ -3,13 +3,13 @@ custom_name: stage5
 files:
 - name: test/WordComparer.kt
   visible: false
-  text: "import org.hyperskill.hstest.v6.testcase.CheckResult\nimport java.util.*\n\
-    import kotlin.math.max\nimport kotlin.math.min\n\nclass InputToken(\n        val\
-    \ content: Any,\n        /** Position in range.*/\n        val range: IntRange\n\
-    ) {\n    override fun equals(other: Any?): Boolean {\n        if (this === other)\
-    \ return true\n        if (javaClass != other?.javaClass) return false\n\n   \
-    \     other as InputToken\n\n        if (content != other.content) return false\n\
-    \n        return true\n    }\n\n    override fun hashCode(): Int {\n        return\
+  text: "import org.hyperskill.hstest.testcase.CheckResult\nimport java.util.*\nimport\
+    \ kotlin.math.max\nimport kotlin.math.min\n\nclass InputToken(\n        val content:\
+    \ Any,\n        /** Position in range.*/\n        val range: IntRange\n) {\n \
+    \   override fun equals(other: Any?): Boolean {\n        if (this === other) return\
+    \ true\n        if (javaClass != other?.javaClass) return false\n\n        other\
+    \ as InputToken\n\n        if (content != other.content) return false\n\n    \
+    \    return true\n    }\n\n    override fun hashCode(): Int {\n        return\
     \ content.hashCode()\n    }\n\n    override fun toString() =\n            if (content::class.simpleName\
     \ == \"String\") \"$content\"\n            else \"$content(${content::class.simpleName})\"\
     \n}\n\n/**Compares two output strings by words (splitted by spaces, commas etc).\n\
@@ -40,17 +40,18 @@ files:
     \                        }\n\n                        else -> match.value\n  \
     \                  }\n                    InputToken(content, match.range)\n \
     \               }.toList()\n    }\n\n\n    fun compare(): CheckResult {\n    \
-    \    // I am author\n        val myTokens = tokenizeWordsRegex(myStr)\n      \
-    \  val hisTokens = tokenizeWordsRegex(hisStr)\n\n        val badTokenIdx = myTokens.zip(hisTokens).indexOfFirst\
-    \ { (my, his) -> my != his }\n\n        if (badTokenIdx != -1) {\n           \
-    \ fun substr(tokens: List<InputToken>, input: String): String {\n            \
-    \    if (trimErrorOnlyByLine) {\n                    // trim by \\n\n        \
-    \            val badToken = tokens[badTokenIdx]\n                    val start\
-    \ = input.take(badToken.range.start).lastIndexOf('\\n').let { if (it == -1) 0\
-    \ else it + 1 }\n                    val end = input.indexOf('\\n', badToken.range.endInclusive).let\
-    \ { if (it == -1) input.length else it }\n                    return input.substring(start,\
-    \ end).trimEnd('\\r')\n                }\n                // trim by nearest tokens\n\
-    \                val std = errorContextStd\n                val subTokens = tokens.subList(max(badTokenIdx\
+    \    // I am author\n        val myTokens = tokenizeWordsRegex(myStr.toLowerCase())\n\
+    \        val hisTokens = tokenizeWordsRegex(hisStr.toLowerCase())\n\n        val\
+    \ badTokenIdx = myTokens.zip(hisTokens).indexOfFirst { (my, his) -> my != his\
+    \ }\n\n        if (badTokenIdx != -1) {\n            fun substr(tokens: List<InputToken>,\
+    \ input: String): String {\n                if (trimErrorOnlyByLine) {\n     \
+    \               // trim by \\n\n                    val badToken = tokens[badTokenIdx]\n\
+    \                    val start = input.take(badToken.range.start).lastIndexOf('\\\
+    n').let { if (it == -1) 0 else it + 1 }\n                    val end = input.indexOf('\\\
+    n', badToken.range.endInclusive).let { if (it == -1) input.length else it }\n\
+    \                    return input.substring(start, end).trimEnd('\\r')\n     \
+    \           }\n                // trim by nearest tokens\n                val\
+    \ std = errorContextStd\n                val subTokens = tokens.subList(max(badTokenIdx\
     \ - std, 0), min(badTokenIdx + std + 1, tokens.size))\n                val strStart\
     \ = subTokens.first().range.start\n                val strEnd = subTokens.last().range.endInclusive\
     \ + 1\n                return input.substring(strStart, strEnd)\n            }\n\
@@ -68,14 +69,14 @@ files:
     \ words, but should contain ${myTokens.size} words.\")\n        }\n        if\
     \ (hisTokens.size > myTokens.size) {\n            return CheckResult(false, \"\
     Your output is too long. \" +\n                    \"It contains ${hisTokens.size\
-    \ - myTokens.size} extra words.\")\n        }\n        return CheckResult.TRUE\n\
+    \ - myTokens.size} extra words.\")\n        }\n        return CheckResult.correct()\n\
     \    }\n}\n"
   learner_created: false
 - name: test/TestCaseHelpers.kt
   visible: false
   text: |+
-    import org.hyperskill.hstest.v6.testcase.CheckResult
-    import org.hyperskill.hstest.v6.testcase.TestCase
+    import org.hyperskill.hstest.testcase.CheckResult
+    import org.hyperskill.hstest.testcase.TestCase
     import java.io.ByteArrayOutputStream
     import java.io.PrintStream
     import java.util.*
@@ -126,14 +127,10 @@ files:
 - name: test/ConverterTest.java
   visible: false
   text: |
-    import converter.MainKt;
-    import org.hyperskill.hstest.v6.stage.BaseStageTest;
+    import org.hyperskill.hstest.stage.StageTest;
 
 
-    abstract public class ConverterTest<T> extends BaseStageTest<T> {
-        public ConverterTest() throws Exception {
-            super(MainKt.class);
-        }
+    abstract public class ConverterTest<T> extends StageTest<T> {
     }
   learner_created: false
 - name: test/Authors.kt
@@ -187,7 +184,7 @@ files:
 
             Temperature.of("c", "degree Celsius", "degrees Celsius", 1.0, 0.0, "dc", "celsius"),
             Temperature.of("f", "degree Fahrenheit", "degrees Fahrenheit", 5 / 9.0, -32.0 * 5 / 9.0, "df", "fahrenheit"), // one df is (1 -32)* 5/9 dc
-            Temperature.of("k", "Kelvin", "Kelvins", 1.0, -273.15) // one Kelvin is 1*1.0 - 273.15 dc
+            Temperature.of("k", "kelvin", "kelvins", 1.0, -273.15) // one Kelvin is 1*1.0 - 273.15 dc
     )
 
     // we use lowercase names in map, but original names are not.
@@ -226,11 +223,11 @@ files:
 
             // error handlers:
             if (m1 == null || m2 == null) {
-                sout.println("Conversion from ${m1?.plural ?: "???"} to ${m2?.plural ?: "???"} is impossible.")
+                sout.println("Conversion from ${m1?.plural ?: "???"} to ${m2?.plural ?: "???"} is impossible")
                 continue
             }
             if (m1.type != m2.type) {
-                sout.println("Conversion from ${m1.plural} to ${m2.plural} is impossible.")
+                sout.println("Conversion from ${m1.plural} to ${m2.plural} is impossible")
                 continue
             }
             if (m1.type != Temperature && value < 0.0) {
@@ -254,8 +251,8 @@ files:
 - name: test/Task5Test.kt
   visible: false
   text: |
-    import org.hyperskill.hstest.v6.testcase.CheckResult
-    import org.hyperskill.hstest.v6.testcase.TestCase
+    import org.hyperskill.hstest.testcase.CheckResult
+    import org.hyperskill.hstest.testcase.TestCase
 
 
     /** TestCase, based on authors solution output. */
@@ -267,7 +264,7 @@ files:
         override fun generate(): List<TestCase<OutputClue>> {
             val l1 = listOf(
                     // tests from the example
-                    authorsCase("1 degree Celsius to Kelvins\n" +
+                    authorsCase("1 degree Celsius to kelvins\n" +
                             "-272.15 dc to K\n" +
                             "1 kn to feet\n" +
                             "1 km to feet\n" +
@@ -291,7 +288,7 @@ files:
                     authorsCase("100 AAA convertTo BBB\nexit"),
                     authorsCase("-100.0 X to Y\nexit", true),
                     authorsCase("-100.0 kelvin to Y\nexit"),
-                    authorsCase("-100.0 X to Kelvin\nexit", true),
+                    authorsCase("-100.0 X to kelvin\nexit", true),
                     authorsCase("100.0 X to Pound\nexit", true),
                     // negative unsupported
                     authorsCase("-100.1 cm to M\nexit"),
@@ -300,7 +297,7 @@ files:
                     authorsCase("-100.1 mg to g\nexit", true),
                     // incomparable
                     authorsCase("1 Pound to degrees Celsius\nexit"),
-                    authorsCase("1 cm to Kelvin\nexit", true),
+                    authorsCase("1 cm to kelvin\nexit", true),
                     authorsCase("1 k to mm\nexit", true),
                     authorsCase("1 g to df\nexit", true),
                     authorsCase("1 degrees celsius to Grams\nexit"),
@@ -359,6 +356,12 @@ files:
         println("Hello, World!")
     }
   learner_created: false
+- name: src/converter/Units.kt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/70/stages/389/implement
-status: Failed
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Fri, 05 Feb 2021 04:15:25 UTC
 record: 5

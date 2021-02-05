@@ -1,9 +1,5 @@
-import converter.MainKt;
-import org.hyperskill.hstest.v6.stage.BaseStageTest;
+import org.hyperskill.hstest.stage.StageTest;
 
 
-abstract public class ConverterTest<T> extends BaseStageTest<T> {
-    public ConverterTest() throws Exception {
-        super(MainKt.class);
-    }
+abstract public class ConverterTest<T> extends StageTest<T> {
 }

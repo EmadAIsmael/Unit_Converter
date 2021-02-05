@@ -1,0 +1,15 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    object Math {
+        //TODO
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10706#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Wed, 03 Feb 2021 23:51:29 UTC
+record: -1

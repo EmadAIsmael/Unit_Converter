@@ -46,7 +46,7 @@ val measures = listOf(
 
         Temperature.of("c", "degree Celsius", "degrees Celsius", 1.0, 0.0, "dc", "celsius"),
         Temperature.of("f", "degree Fahrenheit", "degrees Fahrenheit", 5 / 9.0, -32.0 * 5 / 9.0, "df", "fahrenheit"), // one df is (1 -32)* 5/9 dc
-        Temperature.of("k", "Kelvin", "Kelvins", 1.0, -273.15) // one Kelvin is 1*1.0 - 273.15 dc
+        Temperature.of("k", "kelvin", "kelvins", 1.0, -273.15) // one Kelvin is 1*1.0 - 273.15 dc
 )
 
 // we use lowercase names in map, but original names are not.
@@ -85,11 +85,11 @@ fun solveAuthors(sin: Scanner, sout: PrintStream) {
 
         // error handlers:
         if (m1 == null || m2 == null) {
-            sout.println("Conversion from ${m1?.plural ?: "???"} to ${m2?.plural ?: "???"} is impossible.")
+            sout.println("Conversion from ${m1?.plural ?: "???"} to ${m2?.plural ?: "???"} is impossible")
             continue
         }
         if (m1.type != m2.type) {
-            sout.println("Conversion from ${m1.plural} to ${m2.plural} is impossible.")
+            sout.println("Conversion from ${m1.plural} to ${m2.plural} is impossible")
             continue
         }
         if (m1.type != Temperature && value < 0.0) {
